@@ -1,7 +1,15 @@
+import { Link } from "react-router-dom";
+import "./header.css";
+
 function Header() {
   return (
     <header>
-      <h2>TESTE HEADER</h2>
+      <Link className="logo" to={"/"}>
+        Prime Flix
+      </Link>
+      <Link className="favoritos" to={"/favoritos"}>
+        Meus filmes
+      </Link>
     </header>
   );
 }
