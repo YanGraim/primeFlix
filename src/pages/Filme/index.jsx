@@ -4,6 +4,8 @@ import api from "../../services/api";
 
 function Filme() {
   const { id } = useParams();
+  const [filme, setFilme] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadFilme() {
@@ -15,13 +17,18 @@ function Filme() {
           },
         })
         .then((response) => {
-          console.log(response.data);
+          setFilme(response.data);
+          setLoading(false);
         })
         .catch(() => {
           console.log("Filme não encontrado!");
         });
     }
     loadFilme();
+
+    return () => {
+      console.log("COMPONENTE FOI DESMONTADO");
+    };
   }, []);
 
   return (
