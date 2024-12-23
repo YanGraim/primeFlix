@@ -33,7 +33,7 @@ function Filme() {
     return () => {
       console.log("COMPONENTE FOI DESMONTADO");
     };
-  }, []);
+  }, [navigate, id]);
 
   if (loading) {
     return (
