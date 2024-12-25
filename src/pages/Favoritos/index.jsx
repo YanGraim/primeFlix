@@ -10,6 +10,10 @@ function Favoritos() {
     setFilmes(JSON.parse(minhaLista) || []);
   }, []);
 
+  function excluirFilme() {
+    alert("Excluindo filme");
+  }
+
   return (
     <div className="meus-filmes">
       <h1>Meus filmes</h1>
@@ -20,7 +24,7 @@ function Favoritos() {
               <span>{item.title}</span>
               <div>
                 <Link to={`/filme/${item.id}`}>Ver detalhes</Link>
-                <button>Excluir</button>
+                <button onClick={excluirFilme}>Excluir</button>
               </div>
             </li>
           );
