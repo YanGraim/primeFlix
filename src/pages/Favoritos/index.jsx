@@ -10,8 +10,8 @@ function Favoritos() {
     setFilmes(JSON.parse(minhaLista) || []);
   }, []);
 
-  function excluirFilme() {
-    alert("Excluindo filme");
+  function excluirFilme(id) {
+    alert("Id clicado " + id);
   }
 
   return (
@@ -24,7 +24,7 @@ function Favoritos() {
               <span>{item.title}</span>
               <div>
                 <Link to={`/filme/${item.id}`}>Ver detalhes</Link>
-                <button onClick={excluirFilme}>Excluir</button>
+                <button onClick={() => excluirFilme(item.id)}>Excluir</button>
               </div>
             </li>
           );
