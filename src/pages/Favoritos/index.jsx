@@ -11,7 +11,11 @@ function Favoritos() {
   }, []);
 
   function excluirFilme(id) {
-    alert("Id clicado " + id);
+    let filtroFilmes = filmes.filter((item) => {
+      return item.id != id;
+    });
+
+    setFilmes(filtroFilmes);
   }
 
   return (
