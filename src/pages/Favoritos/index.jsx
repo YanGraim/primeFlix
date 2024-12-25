@@ -16,6 +16,7 @@ function Favoritos() {
     });
 
     setFilmes(filtroFilmes);
+    localStorage.setItem("@primeflix", JSON.stringify(filtroFilmes));
   }
 
   return (
